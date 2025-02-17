@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import RepetitionExercise from "./components/RepetitionExercise";
-import DurationExercise from "./components/DurationExercise";
+import RepetitionExercise from "./components/RepetitionExercise/index.js";
+import DurationExercise from "./components/DurationExercise/index.js";
+
 
 const exercises = [
   { name: "Push-ups", type: "repetition" },

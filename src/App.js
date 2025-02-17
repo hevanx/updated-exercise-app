@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import RepetitionExercise from "./components/RepetitionExercise";
-import DurationExercise from "./components/DurationExercise";
+import repetitionExercise from "./components/repetitionExercise";
+import durationExercise from "./components/durationExercise";
 
 const exercises = [
   { name: "Push-ups", type: "repetition" },
@@ -48,9 +48,9 @@ function App() {
             Back
           </button>
           {selectedExercise.type === "repetition" ? (
-            <RepetitionExercise name={selectedExercise.name} />
+            <repetitionExercise name={selectedExercise.name} />
           ) : (
-            <DurationExercise name={selectedExercise.name} />
+            <durationExercise name={selectedExercise.name} />
           )}
         </>
       ) : (

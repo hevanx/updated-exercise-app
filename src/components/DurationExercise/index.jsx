@@ -56,13 +56,13 @@ const DurationExercise = ({ name }) => {
       <h2 style={titleStyle}>{name.toUpperCase()}</h2>
       <p style={timeStyle}>{formatTime(time)}</p>
       <button
-        style={{ ...buttonStyle, backgroundColor: "#007BFF", color: "white" }}
+        style={{ ...buttonStyle, backgroundColor: "#007BFF", color: "brown" }}
         onClick={() => setIsRunning(true)}
       >
         Start
       </button>
       <button
-        style={{ ...buttonStyle, backgroundColor: "#dc3545", color: "white" }}
+        style={{ ...buttonStyle, backgroundColor: "#dc3545", color: "brown" }}
         onClick={() => { setIsRunning(false); setTime(0); }}
       >
         Reset

@@ -2,52 +2,22 @@ import React, { useState } from "react";
 import RepetitionExercise from "./components/RepetitionExercise/index.jsx";
 import DurationExercise from "./components/DurationExercise/index.jsx";
 
-
 const exercises = [
-  { name: "Push-ups", type: "repetition" },
+  { name: "Push Ups", type: "repetition" },
   { name: "Running", type: "duration" },
   { name: "Plank", type: "duration" },
 ];
 
-const appStyles = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100vh",
-  backgroundColor: "#f8f9fa",
-  fontFamily: "Arial, sans-serif",
-};
-
-const buttonStyles = {
-  width: "200px",
-  padding: "15px",
-  margin: "10px",
-  fontSize: "18px",
-  border: "none",
-  borderRadius: "10px",
-  backgroundColor: "#007BFF",
-  color: "white",
-  cursor: "pointer",
-  textAlign: "center",
-};
-
-const backButtonStyles = {
-  ...buttonStyles,
-  backgroundColor: "#dc3545",
-};
-
-function App() {
+const App = () => {
   const [selectedExercise, setSelectedExercise] = useState(null);
 
   return (
-    <div style={appStyles}>
-      <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>EXERCISE</h1>
+    <div className="container">
+      <h1>EXERCISE</h1>
+      <img src="https://www.citypng.com/public/uploads/preview/red-star-png-img-701751694532306wyxtusq6bm.png" alt="Star" className="star-icon" />
       {selectedExercise ? (
         <>
-          <button style={backButtonStyles} onClick={() => setSelectedExercise(null)}>
-            Back
-          </button>
+          <button className="back-button" onClick={() => setSelectedExercise(null)}>←</button>
           {selectedExercise.type === "repetition" ? (
             <RepetitionExercise name={selectedExercise.name} />
           ) : (
@@ -56,18 +26,13 @@ function App() {
         </>
       ) : (
         exercises.map((exercise, index) => (
-          <button
-            key={index}
-            style={buttonStyles}
-            onClick={() => setSelectedExercise(exercise)}
-          >
+          <button key={index} onClick={() => setSelectedExercise(exercise)}>
             {exercise.name.toUpperCase()}
           </button>
         ))
       )}
     </div>
   );
-}
+};
 
 export default App;
-
